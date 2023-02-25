@@ -1,0 +1,45 @@
+Circuit HUD:
+    ☐ Make the tooltip show the exact number of items
+
+Rate Calculator:
+    ☐ Fix the order of transport belts in the Rate Calculator UI (currently space belts show up first by default)
+
+Factory Search:
+    ☐ Default to text search when opening Factory Search (similar to the Quick Item Search mod)
+
+Shortcuts:
+    ☐ Add a shortcut for auto_sort_main_inventory if it doesn't already exist
+
+Tags:
+    ☐ Make all map tags glow
+
+Zoom:
+    ☐ Investigate zooming
+    Personal zoom sensitivity: 1.25959
+    Max world zoom out level: 0.0157
+    Default map zoom level: 0.0157
+    Quick zoom out  map zoom level: 0.0001
+    Map tags disappear after 0.015625001 (i.e. no map tags at 0.0156250009 or smaller).  Roughly equivalent to 1/64
+    Available functions:
+        player.open_map(position, scale?, entity?)
+        player.zoom_to_world(position, scale?, entity?)
+        player.close_map()
+        player.render_mode
+            render_mode.game (1) = normal game view, stuck to character position
+            render_mode.chart_zoomed_in (3) = map view with visible in radar coverage
+            render_mode.chart (2) = map view
+        player.zoom (write-only)
+        player.position (inherited)
+    Look into:
+        player.display_resolution
+        player.display_scale
+        player.gui    
+        player.set_controller
+        player.teleport (inherited)
+        event on_selected_entity_changed
+        event on_position_changed
+    ? When in map view, and pressing satellite view buttion, space exploration somehow knows where I'm looking in order to make satellite view match?
+    ! It's based on the cursor!
+
+New Mod:
+    ☐ Train Control Signals for pickups and dropoffs

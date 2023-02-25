@@ -1,11 +1,5 @@
 ---------------------------------------------------------------------------
--- Remove difficult requirements from logistics technologies
+-- Include global functions and run each of the files in stages/settings
 ---------------------------------------------------------------------------
-data:extend({
-    {
-        type = "bool-setting",
-        name = "identifier-early-robot-logistics",
-        setting_type = "startup",
-        default_value = false
-    }
-})
+require("global")
+require("stages/settings/kux-zooming")

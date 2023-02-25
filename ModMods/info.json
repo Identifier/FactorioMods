@@ -1,17 +1,16 @@
 {
   "name": "ModMods",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "title": "Mod Mods by Identifier",
   "description": "A personal set of tweaks to existing mods. See changelog and/or mod page for details.",
   "author": "Identifier",
   "contact": "",
-  "homepage": "",
+  "homepage": "https://github.com/Identifier/FactorioMods",
   "factorio_version": "1.1",
   "dependencies": [
     "base >= 1.1",
     "? Krastorio2 >= 1.3.0",
-    "? aai-containers >= 0.2.11",
-    "? logistic-cargo-wagon >= 1.1.0",
-    "? space-exploration >= 0.2.4"
+    "? CircuitHUD-V2 >= 1.3.0",
+    "? Kux-Zooming >= 2.2.8"
   ]
 }
