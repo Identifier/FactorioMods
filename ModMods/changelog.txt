@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
-Date: 2023-02-02
+Date: 2023-02-25
   CircuitHUD V2:
     - Switches to the correct surface when going to a combinator, if Space Exploration is installed.
     - Added some missing Locale strings.
