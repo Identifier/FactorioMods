@@ -3,3 +3,4 @@
 ---------------------------------------------------------------------------
 require("global")
 require("stages/settings/kux-zooming")
+require("stages/settings/aai-loaders")

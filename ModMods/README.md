@@ -18,3 +18,4 @@ A personal set of tweaks to existing mods:
 - Brings back the base game icons for Light and Heavy oil instead of Krastorio 2's new icons.
 - Makes the icon for Petroleum Gas the same color as the fluid in pipes/tanks (purple).
 - Uses the Petroleum Gas icon for the basic-oil-processing recipe, since Krastorio 2 uses the Light Oil icon and Heavy Oil icon for advanced-oil-processing and oil-processing-heavy respectively.
+- Uses the loader graphics from AAI Loaders if that mod is installed and set to graphics-only mode.

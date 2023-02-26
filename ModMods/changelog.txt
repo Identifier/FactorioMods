@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
-Date: ????
-  Changes:
+Date: 2023-02-26
+  AAI Loaders:
+    - If Krastorio 2 is installed, sets the default mode to "graphics-only" predicting that the player will be using Krastorio 2's loaders.
+  Krastorio 2:
+    - If AAI Loaders is installed and set to graphics-only, updates the Krastorio 2 loaders to use the AAI Loaders graphics instead.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
-Date: 2023-02-25
+Date: 2023-02-01
   CircuitHUD V2:
     - Switches to the correct surface when going to a combinator, if Space Exploration is installed.
     - Added some missing Locale strings.

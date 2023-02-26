@@ -11,6 +11,7 @@
     "base >= 1.1",
     "? Krastorio2 >= 1.3.0",
     "? CircuitHUD-V2 >= 1.3.0",
-    "? Kux-Zooming >= 2.2.8"
+    "? Kux-Zooming >= 2.2.8",
+    "? aai-loaders >= 0.1.4"
   ]
 }

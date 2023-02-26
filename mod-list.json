@@ -79,6 +79,11 @@
     },
     
     {
+      "name": "capacity-combinator",
+      "enabled": false
+    },
+    
+    {
       "name": "CircuitHUD-V2",
       "enabled": true
     },
@@ -179,6 +184,11 @@
     },
     
     {
+      "name": "ImprovedCombinatorSE",
+      "enabled": false
+    },
+    
+    {
       "name": "inbuilt_lighting",
       "enabled": true
     },
@@ -251,6 +261,11 @@
     {
       "name": "No-Destination-Full",
       "enabled": true
+    },
+    
+    {
+      "name": "power-combinator",
+      "enabled": false
     },
     
     {
@@ -390,7 +405,7 @@
     
     {
       "name": "UsefulCombinators",
-      "enabled": true
+      "enabled": false
     },
     
     {
