@@ -19,3 +19,6 @@ A personal set of tweaks to existing mods:
 - Makes the icon for Petroleum Gas the same color as the fluid in pipes/tanks (purple).
 - Uses the Petroleum Gas icon for the basic-oil-processing recipe, since Krastorio 2 uses the Light Oil icon and Heavy Oil icon for advanced-oil-processing and oil-processing-heavy respectively.
 - Uses the loader graphics from AAI Loaders if that mod is installed and set to graphics-only mode.
+
+## Deadlock's Stacking Beltboxes & Compact Loaders:
+- Uses the loader graphics from AAI Loaders if that mod is installed and set to graphics-only mode.

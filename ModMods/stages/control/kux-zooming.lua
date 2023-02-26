@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------
--- Restore zoom level after switching views (such as going to pins in Space Exploration, or jumping to combinators in Circuit HUD)
--- Requires a zoom mod such as Kux Zooming Reinvented
+-- Control stage mods to https://mods.factorio.com/mod/Kux-Zooming
 ---------------------------------------------------------------------------
+if not settings.player["ZoomingReinvented_zoom-sensitivity"] then -- The global 'mods' table is not available in control stage, so check for a setting instead
+    return
+end
+
 local ModMods = require("lib/ModMods")
 local Event = require("__stdlib__/stdlib/event/event")
 

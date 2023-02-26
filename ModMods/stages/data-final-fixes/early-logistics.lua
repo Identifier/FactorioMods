@@ -1,4 +1,9 @@
--- Mods to any of the early-logistics mods like https://mods.factorio.com/mod/early-logistics, https://mods.factorio.com/mod/early-logistics11, https://mods.factorio.com/mod/space-exp-early-logistics, etc --
+---------------------------------------------------------------------------
+-- Data-final-fixes stage mods to any of the early-logistics mods like
+-- https://mods.factorio.com/mod/early-logistics,
+-- https://mods.factorio.com/mod/early-logistics11,
+-- https://mods.factorio.com/mod/space-exp-early-logistics, etc...
+---------------------------------------------------------------------------
 if not containsmatch(mods, "early%-logistics") then
 	return
 end

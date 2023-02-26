@@ -1,4 +1,10 @@
--- Mods to https://mods.factorio.com/mod/CircuitHUD-V2 --
+---------------------------------------------------------------------------
+-- Control-stage mods to https://mods.factorio.com/mod/CircuitHUD-V2
+---------------------------------------------------------------------------
+if not settings.player["CircuitHUD_hud_title"] then -- The global 'mods' table is not available in control stage, so check for a setting instead
+	return
+end
+
 local ModMods = require("lib/ModMods")
 local Event = require("__stdlib__/stdlib/event/event")
 

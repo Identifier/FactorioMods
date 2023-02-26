@@ -1,3 +1,12 @@
+---------------------------------------------------------------------------
+-- Data stage mods to https://mods.factorio.com/mod/Krastorio2
+---------------------------------------------------------------------------
+if not mods["Krastorio2"] then
+	return
+end
+
+local ModMods = require("lib/ModMods")
+
 --[[ ChatGPT says:
 The amount of energy released by burning hydrogen and petroleum gas will depend 
 on the heating value and the amount of each substance that is burned. In general, 
