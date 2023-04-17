@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 2023-04-17
+  Krastorio 2:
+    - By default, roboports set to Krastorio 2's "Logistic mode" have a construction radius of 0, meaning they can't even clean up crashed logistic robots.  By enabling a new setting, roboports in "Logistic mode" will have a construction radius equal to their logistic radius.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.5
 Date: 2023-02-26
   Deadlock's Stacking Beltboxes & Compact Loaders:

@@ -130,12 +130,17 @@ end
 
 -- Returns an iterator that returns the elements of a table where the key and/or value matches a given pattern
 function wherematch(t, pattern)
-    return where(t, function (k, v) return string.match(k, pattern) or string.match(v, pattern) end)
+    return where(t, function (k, v) return (type(k) == "string" and string.match(k, pattern)) or (type(v) == "string" and string.match(v, pattern)) end)
 end
 
 -- Returns true if the given table contains a key and/or value that matches a given pattern
 function containsmatch(t, pattern)
     return wherematch(t, pattern)() ~= nil
+end
+
+-- Returns an iterator that returns the elements of a table that have a property with a given name that's value matches a given pattern
+function wherehas(t, prop_name, prop_value)
+    return where(t, function(_, v) return type(v) == "table" and type(v[prop_name]) == "string" and string.find(v[prop_name], prop_value) end)
 end
 
 -- Escape a string so it can be used in string.find without it being interpreted as a pattern

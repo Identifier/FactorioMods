@@ -19,6 +19,7 @@ A personal set of tweaks to existing mods:
 - Makes the icon for Petroleum Gas the same color as the fluid in pipes/tanks (purple).
 - Uses the Petroleum Gas icon for the basic-oil-processing recipe, since Krastorio 2 uses the Light Oil icon and Heavy Oil icon for advanced-oil-processing and oil-processing-heavy respectively.
 - Uses the loader graphics from AAI Loaders if that mod is installed and set to graphics-only mode.
+- By default, roboports set to Krastorio 2's "Logistic mode" have a construction radius of 0, meaning they can't even clean up crashed logistic robots.  By enabling a new setting, roboports in "Logistic mode" will have a construction radius equal to their logistic radius.
 
 ## Deadlock's Stacking Beltboxes & Compact Loaders:
 - Uses the loader graphics from AAI Loaders if that mod is installed and set to graphics-only mode.
