@@ -1,0 +1,14 @@
+{
+  "name": "ClearerIcons",
+  "version": "2.0.0",
+  "title": "Clearer Icons",
+  "description": "Replaces some of the icons with more distinguishable and consistent ones.",
+  "author": "Identifier",
+  "contact": "",
+  "homepage": "https://github.com/Identifier/FactorioMods",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "?space-age >= 2.0"
+  ]
+}
