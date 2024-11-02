@@ -1,1 +1,1 @@
-C:/Users/Identifier/AppData/Roaming/Factorio/mods/global.lua
+../global.lua
