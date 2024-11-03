@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 2024-11-02
+  Fixes:
+    - Fixed the symbolic link to global.lua which was causing the published package to fail during load.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2024-11-01
   Icons:
