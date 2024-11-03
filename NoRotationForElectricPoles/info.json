@@ -1,0 +1,9 @@
+{
+  "name": "NoRotationForElectricPoles",
+  "version": "2.0.0",
+  "title": "No Rotation For Electric Poles",
+  "author": "darkfrei",
+  "description": "Now all poles have only one orientation",
+  "dependencies": ["base"],
+  "factorio_version": "2.0"
+}
