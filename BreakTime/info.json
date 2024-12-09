@@ -1,0 +1,13 @@
+{
+  "name": "BreakTime",
+  "version": "1.0.0",
+  "title": "Break Time",
+  "description": "Pauses the game periodically to encourage you to get off your butt and take a break.",
+  "author": "Identifier",
+  "contact": "",
+  "homepage": "https://github.com/Identifier/FactorioMods",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0"
+  ]
+}
