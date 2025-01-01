@@ -19,5 +19,15 @@ data:extend({
         order = "b",
         localised_name = "Break Duration",
         localised_description = "The duration (in minutes) that the game will remain paused."
+    },
+    {
+        type = "string-setting",
+        name = "break_reminder_times",
+        setting_type = "runtime-per-user",
+        default_value = "1, 10",
+        order = "c",
+        allow_blank = true,
+        localised_name = "Break Reminders",
+        localised_description = "The amount of time (in minutes) before breaktime to show reminders."
     }
 })

@@ -5,15 +5,16 @@ local function get_break_time()
     local game_time_in_ticks = game.tick
     local in_break_period = (game_time_in_ticks % (break_interval + break_duration)) < break_duration
     local ticks_in_current_cycle = game.tick % (break_interval + break_duration)
-    return break_interval, break_duration, in_break_period, ticks_in_current_cycle
+    local ticks_until_break_ends = break_duration - ticks_in_current_cycle
+    local ticks_until_next_break = break_interval - (ticks_in_current_cycle - break_duration)
+    return break_interval, break_duration, in_break_period, ticks_in_current_cycle, ticks_until_break_ends, ticks_until_next_break
 end
 
 local function get_next_break_time_string()
-    local break_interval, break_duration, in_break_period, ticks_in_current_cycle = get_break_time()
+    local break_interval, break_duration, in_break_period, ticks_in_current_cycle, ticks_until_break_ends, ticks_until_next_break = get_break_time()
 
     if in_break_period then
         -- Currently in a break
-        local ticks_until_break_ends = break_duration - ticks_in_current_cycle
         local minutes_until_break_ends = math.floor(ticks_until_break_ends / 60) -- adjusted for slowed speed during breaktime
         local seconds_until_break_ends = math.floor(ticks_until_break_ends % 60)
         local result = "Break ends in " .. minutes_until_break_ends .. " minutes"
@@ -23,33 +24,38 @@ local function get_next_break_time_string()
         return result .. "."
     else
         -- Not in a break, calculate time until next break
-        local ticks_until_next_break = break_interval - (ticks_in_current_cycle - break_duration)
         local minutes_until_next_break = math.floor(ticks_until_next_break / 3600)
         local seconds_until_next_break = math.floor(ticks_until_next_break % 60)
-        local result = "Next break starts in " .. minutes_until_next_break .. " minutes"
+        local result = "Next break starts in " .. minutes_until_next_break .. " minute" .. (minutes_until_next_break > 1 and "s" or "")
         if seconds_until_next_break > 0 then
             result = result .. " and " .. seconds_until_next_break .. " seconds"
         end
-        return result .. "."
+        return result .. (minutes_until_next_break > 1 and "." or "!")
     end
 end
 
 script.on_event(defines.events.on_tick, function(event)
-    local _, _, in_break_period = get_break_time()
+    local break_interval, break_duration, in_break_period, ticks_in_current_cycle, ticks_until_break_ends, ticks_until_next_break = get_break_time()
 
     if in_break_period then
         if game.speed ~= 1 / 60 then
-            -- Slow down the game
             game.speed = 1 / 60
-            game.print("Time for a break! " .. get_next_break_time_string())
-            game.play_sound{path = "utility/scenario_message"}
+            game.print("Time for a break! " .. get_next_break_time_string(), { sound_path = "utility/game_won"})
         end
     else
         if game.speed ~= 1 then
-            -- Resume normal speed
             game.speed = 1
-            game.print("Break time over. " .. get_next_break_time_string())
-            game.play_sound{path = "utility/new_objective"}
+            game.print("Break time over. Game on! " .. get_next_break_time_string(), { sound_path = "utility/new_objective"})
+        else
+            -- Check reminders for each player individually
+            for _, player in pairs(game.connected_players) do
+                local reminder_times = settings.get_player_settings(player)["break_reminder_times"].value
+                for reminder_time in string.gmatch(tostring(reminder_times), '%d+') do
+                    if ticks_until_next_break == tonumber(reminder_time) * 60 * 60 then
+                        player.print(get_next_break_time_string(), { sound_path = "utility/scenario_message"})
+                    end
+                end
+            end
         end
     end
 end)

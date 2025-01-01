@@ -1,0 +1,5 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2025-01-01
+  Updates:
+    - Added breaktime reminders/warnings before the break time occurs.
