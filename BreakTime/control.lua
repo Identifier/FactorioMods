@@ -3,9 +3,9 @@ local function get_break_time()
     -- All timing related math in here.
     local break_interval = settings.global["break_interval"].value * 60 * 60 -- Convert from minutes to ticks
     local break_duration = settings.global["break_duration"].value * 60 -- Convert from minutes to ticks (adjusted for slowed speed)
-    local game_time_in_ticks = game.tick
+    local time_since_reset = game.tick - (storage.last_reset_tick or 0)
     local cycle_duration = break_interval + break_duration
-    local ticks_in_current_cycle = game_time_in_ticks % cycle_duration
+    local ticks_in_current_cycle = time_since_reset % cycle_duration
     local in_break_period = ticks_in_current_cycle >= break_interval
     local ticks_until_break_ends = cycle_duration - ticks_in_current_cycle
     local ticks_until_next_break = break_interval - ticks_in_current_cycle
@@ -83,8 +83,9 @@ script.on_event(defines.events.on_tick, function(event)
 end)
 
 script.on_event(defines.events.on_player_joined_game, function(event)
-    -- Print a reminder to everyone whenever someone joins the game.
-    game.print(get_next_break_time_string())
+    -- Reset the break timer whenever a player joins.
+    storage.last_reset_tick = game.tick
+    game.print("Welcome, " .. game.get_player(event.player_index).name .. "! " .. get_next_break_time_string())
 end)
 
 script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
